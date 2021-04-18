@@ -40,7 +40,7 @@ def search_course_by_title(obj, title: str) -> tuple:
 
 def search_in_date_range(obj, validator: Validator, start_date: str, end_date: str) -> tuple:
     """
-    Search courses between to dates
+    Search courses between two dates
     :param obj: Course
     :param validator: obj of class Validator
     :param start_date: start date
