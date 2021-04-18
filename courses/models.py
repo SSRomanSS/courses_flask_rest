@@ -1,4 +1,7 @@
 from datetime import datetime
+
+from flask import url_for
+
 from courses import db
 
 
@@ -12,7 +15,7 @@ class Course(db.Model):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if kwargs.get('start_date') and kwargs.get('end_date'):
+        if kwargs.get('start_date') and kwargs.get('end_date') and kwargs.get('lectures_number'):
             self.start_date = self.str_to_datetime(kwargs['start_date'])
             self.end_date = self.str_to_datetime(kwargs['end_date'])
             self.lectures_number = int(kwargs['lectures_number'])
@@ -22,11 +25,13 @@ class Course(db.Model):
 
     def to_dict(self) -> dict:
         return {
-            'id': self.id,
             'title': self.title,
             'start_date': self.datetime_to_str(self.start_date),
             'end_date': self.datetime_to_str(self.end_date),
             'lectures_number': self.lectures_number,
+            "_links": {
+                "self": url_for('api.get_course', id=self.id),
+            }
         }
 
     @staticmethod
