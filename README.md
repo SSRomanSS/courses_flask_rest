@@ -20,6 +20,10 @@ Clone git repository into environment directory:
 ```
 $ git clone https://github.com/SSRomanSS/courses_flask_rest
 ```
+Change directory:
+```
+$ cd courses_flask_rest/
+```
 Install all dependencies:
 ```
 $ pip install -r requirements.txt
