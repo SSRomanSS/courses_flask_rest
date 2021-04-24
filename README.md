@@ -28,6 +28,14 @@ Install all dependencies:
 ```
 $ pip install -r requirements.txt
 ```
+Create DB:
+```
+flask db upgrade
+```
+Add data to DB:
+```
+python fill_in_db.py
+```
 Run
 ```
 $ flask run
