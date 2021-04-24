@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
-
 from config import Config
 
 app = Flask(__name__)
@@ -19,10 +18,3 @@ from courses.api import api_bp
 app.register_blueprint(api_bp, url_prefix='/api')
 
 from courses.models import Course
-
-
-
-
-
-
-

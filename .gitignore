@@ -175,3 +175,4 @@ celerybeat-schedule
 test.py
 draft.py
 learn.py
+*.db

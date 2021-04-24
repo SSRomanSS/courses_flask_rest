@@ -3,9 +3,7 @@ from flask import jsonify, request
 from courses import db, app
 from courses.api import api_bp
 from courses.api.services import find_courses
-
 from courses.api.utils.validators import Validator
-
 from courses.models import Course
 
 
@@ -93,4 +91,3 @@ def delete_course(id):
         app.logger.error(e)
         db.session.rollback()
         return jsonify(message='Something went wrong'), 400
-

@@ -1,6 +1,5 @@
 from sqlalchemy import and_
 
-
 from courses.api.utils.validators import Validator
 
 
